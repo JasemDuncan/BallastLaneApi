@@ -1,0 +1,14 @@
+
+version: '3'
+
+services:
+  db:
+    build: .
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_DB: ballastDb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: aaaaadmin
