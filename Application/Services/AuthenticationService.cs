@@ -74,8 +74,9 @@ public class AuthenticationService : IAuthenticationService
         return _mapper.Map<UserViewModel>(createdUser);
     }
 
-    public async Task<UserViewModel> UpdateUser(UserViewModel user)
+    public async Task<UserViewModel> UpdateUser(int id, UserViewModel user)
     {
+        user.UserId = id;
         var existingUser = await _userRepository.GetUserById(user.UserId.Value) ?? throw new Exception("User not found");
 
         var updatedUser = new User
