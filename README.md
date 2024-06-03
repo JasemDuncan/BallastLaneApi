@@ -57,6 +57,18 @@ To run this project on your local machine:
 > http://localhost:5299/swagger/index.html
 
 
+## 💭 Thoughts During Development
+
+Creating this application was both challenging and rewarding. Initially, defining a clear user story and roadmap was crucial. 
+
+Leveraging the latest .NET version ensured we used modern features, while Clean Architecture enforced strong separation of concerns and improved structure. 
+
+Designing RESTful CRUD operations for users and projects, implementing secure login and token management, and ensuring data integrity with unique constraints were key aspects. 
+
+Containerizing the app with Docker provided consistent environments, particularly when setting up PostgreSQL. Handling dependencies without Entity Framework, Dapper, or Mediator, writing unit tests first to improve code quality, and resolving issues like unique constraint violations enhanced my problem-solving skills. 
+
+This project significantly strengthened my full-stack development skills within the .NET ecosystem, reinforced the importance of best practices, and provided deeper insights into Clean Architecture, TDD, and Docker.
+
 ## Author 
 
 ## 🎨 **Jasem Valencia**
