@@ -26,6 +26,8 @@ public class ProjectService : IProjectService
 
     public async Task DeleteProject(int id)
     {
+        var project = await _projectRepository.GetProject(id);
+        if (project == null) throw new Exception("Project does not exist");
         await _projectRepository.DeleteProject(id);
     }
 
@@ -44,6 +46,7 @@ public class ProjectService : IProjectService
 
     public async Task<ProjectViewModel> UpdateProject(int id, ProjectViewModel project)
     {
+        project.ProjectId = id;
         var projectEntity = _mapper.Map<Project>(project);
         var updatedProject = await _projectRepository.UpdateProject(projectEntity);
         return _mapper.Map<ProjectViewModel>(updatedProject);

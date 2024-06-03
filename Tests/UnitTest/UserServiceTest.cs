@@ -99,7 +99,7 @@ public class AuthenticationServiceTest
         // Arrange
         // Setup
         _userRepository.Setup(x => x.GetUserById(It.IsAny<int>())).ReturnsAsync((int userId) => _users.FirstOrDefault(x => x.UserId == userId));
-
+        var id = 2;
         var userToUpdate = new UserViewModel
         {
             UserId = 2,
@@ -111,7 +111,7 @@ public class AuthenticationServiceTest
         };
 
         // Action, Assert
-        Assert.ThrowsAsync<Exception>(() => _authenticationService.UpdateUser(userToUpdate));
+        Assert.ThrowsAsync<Exception>(() => _authenticationService.UpdateUser(id,userToUpdate));
 
     }
 }

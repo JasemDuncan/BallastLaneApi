@@ -122,7 +122,7 @@ public class ProjectServiceTest
 
     public async Task DeleteProject()
     {
-        _projectRepository.Setup(p => p.DeleteProject(3));
+        _projectRepository.Setup(p => p.GetProject(3)).ReturnsAsync(_project);
         _projectRepository.Setup(p => p.DeleteProject(3));
         await _projectService.DeleteProject(3);
         Assert.Pass();

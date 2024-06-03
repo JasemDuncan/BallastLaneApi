@@ -1,5 +1,5 @@
 
-namespace BallastLaneApplications.ballastLane.Application.ViewModels;
+namespace ballastLaneApi.Application.ViewModels;
 
 public class LoginViewModel
 {
